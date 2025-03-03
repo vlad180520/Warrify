@@ -1,0 +1,26 @@
+.header {
+    height: 10vh;
+    width: 100vw;
+    background-color: lightblue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul {
+    display: flex;
+    gap: 2vw;
+}
+ul li {
+    list-style: none;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li a {
+    color: white;
+    text-decoration: none;
+}
