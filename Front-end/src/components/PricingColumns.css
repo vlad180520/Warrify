@@ -50,7 +50,9 @@
     color: #1a365d;
     line-height: 1.2;
   }
-  
+  .specs {
+    min-height: 13vh;
+  }
   .specs p {
     color: #4a5568;
     margin: 0.8rem 0;

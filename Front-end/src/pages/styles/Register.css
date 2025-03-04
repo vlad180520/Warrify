@@ -1,0 +1,118 @@
+/* RegisterForm.css */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6vh;
+  }
+  
+  .auth-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    width: 25vw;
+  }
+  
+  .auth-form h2 {
+    color: #2a5dc5;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #495057;
+    font-weight: 500;
+  }
+  
+  .form-group input {
+    width: 90%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    border-color: #2a5dc5;
+    outline: none;
+  }
+  
+  .form-group input.error {
+    border-color: #dc3545;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+  }
+  
+  .terms-group {
+    width: 15vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+  }
+  
+  .terms-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #6c757d;
+  }
+  
+  .terms-group a {
+    color: #2a5dc5;
+    text-decoration: none;
+  }
+  
+  .terms-group a:hover {
+    text-decoration: underline;
+  }
+  
+  .error-label {
+    color: #dc3545 !important;
+  }
+  
+  .error-checkbox {
+    accent-color: #dc3545;
+  }
+  
+  .submit-btn {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #2a5dc5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #1d4a8a;
+  }
+.eroaretermeni {
+    margin-top: -0.5vh;
+    margin-bottom: 1.3vh;
+    text-align: center;
+}
