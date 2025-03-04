@@ -11,6 +11,9 @@ import Login from './pages/Login'
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
+import NotFound from './pages/NotFound';
+import Pricing from './pages/Pricing';
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -18,13 +21,16 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />}/>
+          <Route path="/" element={<Navigate to='/home' />} />
           <Route path="/home" element={<Home />}/>
           <Route path="/profile" element={<Profile />}/>
           <Route path="/register" element={<Register />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/dashboard" element={<Dashboard />}/>
           <Route path="/about" element={<About />}/>
+          <Route path="/pricing" element={<Pricing />}/>
+          <Route path="/not-found" element={<NotFound />}/>
+          <Route path="*" element={<Navigate to='/not-found' />} />
         </Routes>
       </Router>
     </>

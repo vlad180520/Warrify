@@ -11,13 +11,13 @@ function Header() {
         <>
             <div className="header">
                 <div className="leftSide">
-                    <Logo/>
+                    <Link to="/home"><Logo/></Link>
                     <ul className='textSectiuni'>
-                        <li className='listSectiuni'><Link to="/home" className='textSectiuni'>Home</Link></li>
-                        <li className='listSectiuni'><Link to="/dashboard" className='textSectiuni'>Dashboard</Link></li>
-                        <li className='listSectiuni'><Link to="/pricing" className='textSectiuni'>Pricing</Link></li>
-                        <li className='listSectiuni'><Link to="/about" className='textSectiuni'>About Us</Link></li>
-                        <li className='listSectiuni'><Link to="/contact" className='textSectiuni'>Contact</Link></li>
+                    <Link to="/home" className='textSectiuni'><li className='listSectiuni'>Home</li></Link>
+                    <Link to="/dashboard" className='textSectiuni'><li className='listSectiuni'>Dashboard</li></Link>
+                    <Link to="/pricing" className='textSectiuni'><li className='listSectiuni'>Pricing</li></Link>
+                    <Link to="/about" className='textSectiuni'><li className='listSectiuni'>About Us</li></Link>
+                    <Link to="/contact" className='textSectiuni'><li className='listSectiuni'>Contact</li></Link>
                     </ul>
                 </div>
                 <div className="rightSide">

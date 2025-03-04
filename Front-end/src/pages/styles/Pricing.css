@@ -1,0 +1,13 @@
+.title {
+    height: 20vh;
+    width: 85vw;
+    color: black;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-weight: bold;
+    font-size: 40px;
+}
+.mainPricing {
+    width: 90vw;
+}

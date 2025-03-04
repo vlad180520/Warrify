@@ -1,6 +1,8 @@
 .header {
     height: 10.5vh;
-    width: 100vw;
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
     background-color: white;
     font-family: unifysans, helvetica, arial, lato, sans-serif !important;
     font-size: 17px;
@@ -39,7 +41,7 @@ ul li {
     justify-content: center;
     align-items: center;
 }
-li a {
+a {
     color: rgb(0, 0, 0);
     text-decoration: none;
     transition: .3s;
@@ -47,7 +49,7 @@ li a {
 .listSectiuni:hover {
     cursor: pointer;
 }
-.listSectiuni:hover .textSectiuni {
+.listSectiuni:hover {
     color: #0047ff;
 }
 .button {

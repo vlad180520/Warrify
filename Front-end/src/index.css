@@ -1,4 +1,5 @@
 #root {
+  width: 100vw !important;
   max-width: 100vw !important;
   padding: 0 !important;
   text-align: unset !important;
@@ -7,4 +8,8 @@
   margin: 0 auto;
   padding: 0;
   box-sizing: content-box;
+}
+body {
+  overflow-x: hidden;
+  font-family: unifysans, helvetica, arial, lato, sans-serif !important;
 }
