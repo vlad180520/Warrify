@@ -1,0 +1,31 @@
+/* Container principal - dimensiunea se controlează din clasa părinte */
+.logo-container {
+    display: inline-block;
+    width: var(--logo-width, 250px); /* Controlat prin CSS custom property */
+}
+
+/* Stiluri specifice SVG */
+.logo-svg {
+    width: 100%;
+    height: auto;
+}
+
+.w-letter {
+    fill: #2d6ae2; /* Albastrul original */
+    stroke: #2d6ae2;
+    stroke-width: 2;
+}
+
+.cross-line {
+    stroke: #ff6b35;
+    stroke-width: 6;
+    stroke-linecap: round;
+}
+
+.logo-text {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 34px; /* Dimensiune redusă */
+    font-weight: 600;
+    fill: #666666; /* Gri mediu */
+    letter-spacing: -0.5px;
+}
