@@ -18,13 +18,13 @@ function Header() {
                 </div>
                 <div className="rightSide">
                     <ul className='textSectiuni'>
-                        <li>Profile</li>
+                        <li><Link to="/profile" className='textSectiuni'>Profile</Link></li>
                         <li>
-                            Register
+                            <Link to="/register" className='textSectiuni'>Register</Link>
                         </li>
-                        <li>Login</li>
+                        <li><Link to="/login" className='textSectiuni'>Login</Link></li>
                         <li>
-                            <img src="" alt="statusPachet" />
+                            <Link to="/home" className='textSectiuni'><img src="" alt="statusPachet" /></Link>
                         </li>
                     </ul>
                 </div>

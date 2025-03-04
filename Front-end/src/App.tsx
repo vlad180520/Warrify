@@ -5,12 +5,12 @@ import './App.css'
 import { Navigate } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header'
-import Home from './Home'
-import About from './About'
-import Login from './Login'
-import Register from './Register';
-import Dashboard from './Dashboard';
-import Profile from './Profile';
+import Home from './pages/Home'
+import About from './pages/About'
+import Login from './pages/Login'
+import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
+import Profile from './pages/Profile';
 function App() {
   const [count, setCount] = useState(0)
 
