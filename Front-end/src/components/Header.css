@@ -1,17 +1,20 @@
 .header {
-    height: 14vh;
+    height: 13vh;
     width: 100vw;
-    background-color: lightblue;
+    background-color: white;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 17px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
-    --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
-    --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
-    --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
-    --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+.leftSide
+{
+    display: flex;
+}
+.leftSide img {
+    margin-right: 5vw;
 }
 ul {
     display: flex;
@@ -31,4 +34,21 @@ li a {
 }
 .textSectiuni:hover {
     color: black;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff5400; /* Portocaliu */
+    background-color: transparent;
+    border: 2px solid #ff5400;
+    border-radius: 25px; /* Rotunjire */
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.button:hover {
+    background-color: #ff5400;
+    color: white;
 }
