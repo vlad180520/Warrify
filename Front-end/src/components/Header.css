@@ -24,3 +24,6 @@ li a {
     color: white;
     text-decoration: none;
 }
+.textSectiuni:hover {
+    color: black;
+}
