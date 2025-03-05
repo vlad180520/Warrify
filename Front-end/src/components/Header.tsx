@@ -34,7 +34,7 @@ function Header() {
                         {!isLoggedIn &&
                             <>
                                 <li>
-                                    <Link to="/freetrial" className='button buttoninvert'>Try for free</Link>
+                                    <Link to="/register" className='button buttoninvert'>Try for free</Link>
                                 </li>
                                 <li>
                                     <Link to="/login" className='button'>Login</Link>
