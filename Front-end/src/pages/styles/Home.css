@@ -4,7 +4,7 @@
     height: 75vh;
     transition: box-shadow 0.25s ease-in-out 0.1s;
 
-    display: grid;
+    display: flex;
     place-items: center;
 }
 
@@ -13,7 +13,7 @@
 }
 p {
     font-family: Inter;
-    color: black;
-    font-size: 30px;
+    color: white;
+    font-size: 40px;
     font-weight: bolder;
 }
