@@ -2,9 +2,9 @@
 .pricing-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1.5rem;
     padding-top: 0 !important;
-    padding: 2rem;
+    padding: 1rem;
     margin: 0 auto;
   }
   
@@ -13,7 +13,7 @@
     background: #ffffff;
     border-radius: 12px;
     width: 20vw;
-    padding: 2rem;
+    padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border: 1px solid #e2e8f0;
   }
@@ -21,19 +21,19 @@
   .popular-badge {
     position: absolute;
     top: -15px;
-    right: -10px;
+    right: -5px;
     background: #ff6b35;
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   
   h2 {
     color: #2d6ae2;
     margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   
   .price-box {
@@ -45,23 +45,23 @@
   }
   
   .price {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #1a365d;
     line-height: 1.2;
   }
   .specs {
-    min-height: 13vh;
+    min-height: 11vh;
   }
   .specs p {
     color: #4a5568;
-    margin: 0.8rem 0;
-    font-size: 1rem;
+    margin: 0.7rem 0;
+    font-size: .9rem;
   }
   
   .features {
     list-style: none;
-    padding: 1rem 0;
+    padding: .5rem 0;
     margin: 1.5rem 0;
     border-top: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
@@ -77,7 +77,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: .8rem;
     background: #2d6ae2;
     color: white;
     border: none;

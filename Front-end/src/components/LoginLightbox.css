@@ -1,0 +1,65 @@
+/* LoginLightbox.css */
+/* Overlay-ul principal */
+.login-lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.445);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Conținutul lightbox-ului */
+  .login-lightbox-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 32vh;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Titlul */
+  .lightbox-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Butonul de conectare */
+  .login-button {
+    margin-top: 2vh;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    font-size: 17px;
+    padding: 1.8vh 2.4vw;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+  .login-lightbox-content .flex {
+    gap: 2.5vw;
+  }
+  .login-button:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.05);
+  }
+  
+  .login-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #93c5fd;
+  }

@@ -1,0 +1,110 @@
+.grid-container {
+    margin-top: 3vh;
+    width: 90vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr;
+    grid-auto-rows: 20vh;
+    font-family: unifysans, helvetica, arial, lato, sans-serif !important;
+    grid-column-gap: 1vw;
+    grid-row-gap: 1vh;
+    justify-content: center;
+}
+.grid-item {
+    width: 100%;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+}
+.flex {
+    display: flex;
+}
+.grid-item-1 {
+    grid-column: span 2;
+    flex-direction: column;
+    justify-content: center;
+}
+.grid-item-2 {
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+.grid-item-3 {
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.grid-item-4 {
+    grid-row-start: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vh;
+}
+.grid-item-5 {
+    grid-row: span 4;
+}
+.big-number {
+    font-size: 60px;
+    text-align: left;
+    margin-left: 1vw;
+}
+.item-1-text {
+    font-size: 18px;
+    margin-left: 1vw;
+    letter-spacing: .5px;
+    color: gray;
+}
+.grid-item-2 h2 {
+    position: absolute;
+    color: black;
+    top:0 ;
+    padding-top: 2vh;
+    margin-left: -.2vw;
+    font-size: 20px;
+}
+.item-2-row-1 {
+    position: relative;
+    flex-direction: column;
+    height: 50%;
+    padding-left: 1vw;
+    gap: .8vh;
+    justify-content: center;
+}
+.item-2-row-1 .big-number,.item-2-row-2 .big-number {
+    margin-left: 0 ;
+}
+.item-2-row-2 {
+    position: relative;
+    justify-content: center;
+    gap: .8vh;
+    flex-direction: column;
+    padding-left: 1vw;
+    height: 50%;
+}
+.pericol {
+    background: #ffebee; /* Roșu deschis pentru fundal */
+    border: 2px solid #ff4444; /* Roșu aprins pentru bordură */
+    border-radius: 8px;
+}
+.danger-symbol {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    bottom: -1vh;
+    right: -1vw;
+  }
+  .buttongrid {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff5400; /* Portocaliu */
+    background-color: transparent;
+    border: 2px solid #ff5400;
+    border-radius: 5px; /* Rotunjire */
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.buttongrid:hover {
+    background-color: #ff5400;
+    color: white;
+}

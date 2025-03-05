@@ -70,12 +70,12 @@ a {
     color: white;
 }
 .buttoninvert {
-    color: white;
-    background-color: #ff5400;
+    color: white !important;
+    background-color: #ff5400 !important;
 }
 .buttoninvert:hover {
-    background-color: transparent;
-    color: #ff5400;
+    background-color: transparent !important;
+    color: #ff5400 !important;
 }
 .logo-w {
     height: 12vh;
