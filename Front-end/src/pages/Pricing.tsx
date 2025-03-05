@@ -1,16 +1,21 @@
 import Header from "../components/Header"
 import './styles/Pricing.css'
 import PricingColumns from "../components/PricingColumns"
+import Footer from "../components/Footer"
+import GarantiiBenefits from "../components/GarantiiBenefits"
+
 function Pricing() {
     return (
         <>
-        <Header />
-        <div className="mainPricing">
-            <div className="title">
-                Alegeti abonamentul potrivit pentru Dvs.
+            <Header />
+            <div className="mainPricing">
+                <div className="title">
+                    Alegeti abonamentul potrivit pentru Dvs.
+                </div>
+                <PricingColumns />
+                <GarantiiBenefits />
             </div>
-            <PricingColumns />
-        </div>
+            <Footer />
         </>
     )
 }

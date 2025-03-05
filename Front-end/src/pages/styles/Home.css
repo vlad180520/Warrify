@@ -1,19 +1,51 @@
 .background {
     background-image: linear-gradient(180deg, #000096 25%, #0097ff 110%) !important;
     background-size: 100% auto;
-    height: 75vh;
-    transition: box-shadow 0.25s ease-in-out 0.1s;
 
+=======
     display: flex;
-    place-items: center;
+    align-items: center;
+    height: 65vh;
+>>>>>>> bf2bde7bd6a3ba50de397f11cf889df2663b7bda
 }
 
-.background:hover {
-    box-shadow: 0 10px 50px 10px blue;
+.main-content h2 {
+    color: rgb(255, 255, 255);
+    font-size: 57px;
+    border: 0;
+    padding: 0;
 }
-p {
-    font-family: Inter;
-    color: white;
+=======
+.main-content p {
+    color: rgba(255, 255, 255, 0.807);
+    padding-top: 1.5vh;
+    font-size: 23px;
+>>>>>>> bf2bde7bd6a3ba50de397f11cf889df2663b7bda
+}
+.mtop {
+    padding-top: 10vh;
+    padding-bottom: 0vh;
+}
+.main-content {
+    position: relative;
+    display: flex;
+    width: 85vw;
+    justify-content: center;
+    align-items: center;
+}
+.second h2{
     font-size: 40px;
-    font-weight: bolder;
+    color: black !important;
+}
+.second p {
+    color: rgb(69, 69, 69) !important
+}
+.text {
+    width: 40vw;
+}
+.image {
+    width: 30vw;
+}
+.image img {
+    width: 100%;
 }
