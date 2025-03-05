@@ -6,10 +6,16 @@ function Home() {
         <>
             <Header />
             <div className="background">
-                <p>Warrify</p>
-                <p>A new way of managing warranties</p>
-                <p>Efficient. Organized. Simple</p>
-                
+                <div className="main-content">
+                    <div className="text">
+                        <p>Warrify</p>
+                        <p>A new way of managing warranties</p>
+                        <p>Efficient. Organized. Simple</p>
+                    </div>
+                    <div className="image">
+                        <img src="./../assets/info.png" alt="da"/>
+                    </div>
+                </div>
             </div>
         </>
     )

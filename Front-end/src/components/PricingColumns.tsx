@@ -40,8 +40,17 @@ const PricingColumns = () => {
           {plan.popular && <div className="popular-badge">Cel mai popular</div>}
           <h2>{plan.title}</h2>
           <div className="price-box">
-            <div className="price">numai<br/>{plan.price}</div>
+            {plan.price!='0 RON'&&
+            <>
+            <div className="price">{plan.price}</div>
             <small>*RON pe luna</small>
+            </>
+            }
+            {plan.price=='0 RON'&&
+            <><div className="price">Gratis</div>
+            <br></br>
+            </>
+            }
           </div>
           
           <div className="specs">
