@@ -1,0 +1,51 @@
+.maxBox {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-box {
+    background: white;
+    border: 5px solid #0047ff;
+    border-radius: 20px;
+    box-shadow: 0 0 15px 0 #0047ff;
+    width: 70vw;
+    height: 60vh;
+    display: flex;
+}
+
+form, label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    font-family: inherit;
+}
+
+input, textarea {
+    background-color: white;
+    border: 3px solid #0047ff;
+    border-radius: 7px;
+    color: black;
+    font-weight: bold;
+
+    margin: 10px 0 0 0;
+    width: 100%;
+    min-height: 2em;
+
+    font-family: inherit;
+    padding-left: 4px;
+}
+
+textarea {
+    padding-top: 4px;
+}
+
+input[type="submit"] {
+    width: 20%;
+    border-radius: 7px;
+    font-size: 16px;
+}

@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header'
 import Home from './pages/Home'
 import About from './pages/About'
+import Contact from './pages/Contact'
 import Login from './pages/Login'
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
@@ -28,6 +29,7 @@ function App() {
           <Route path="/login" element={<Login />}/>
           <Route path="/dashboard" element={<Dashboard />}/>
           <Route path="/about" element={<About />}/>
+          <Route path="/contact" element={<Contact />}/>
           <Route path="/pricing" element={<Pricing />}/>
           <Route path="/not-found" element={<NotFound />}/>
           <Route path="*" element={<Navigate to='/not-found' />} />

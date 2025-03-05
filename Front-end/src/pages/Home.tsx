@@ -39,9 +39,9 @@ function Home() {
                     </div>
                 </div>
                 <div className="main-content mtop">
-                <div className="image">
-                    <img src={dash} />
-                </div>
+                    <div className="image">
+                        <img src={dash} />
+                    </div>
                 <div className="text second">
                     <h2>Advanced reports and easy to use dashboard</h2>
                     <p>Reduces 80% of work</p>
