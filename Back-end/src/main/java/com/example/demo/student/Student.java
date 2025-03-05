@@ -25,7 +25,6 @@ public class Student {
         this.dateOfBirth = dateOfBirth;
         this.age = age;
     }
-
     public Long getId() {
         return id;
     }

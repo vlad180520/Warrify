@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,19 +28,22 @@ import org.springframework.stereotype.Component;
 @SpringBootApplication
 public class DemoApplication {
 
+
 	public static void main(String[] args) {
+		Dotenv dotenv = Dotenv.load();
+		String mongoUri = dotenv.get("MONGO_URI");
 		try {
 			// Replace the connection string with your MongoDB connection string
-			MongoClient mongoClient = MongoClients.create("mongodb+srv://:@cluster0.ntrme.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+			MongoClient mongoClient = MongoClients.create(mongoUri);
 
 			// Replace "sampleDB" with your actual database name
-			MongoDatabase database = mongoClient.getDatabase("SampleDB");
+			MongoDatabase database = mongoClient.getDatabase("Warrify");
 
 			// Replace "sampleCollection" with your actual collection name
-			MongoCollection<Document> collection = database.getCollection("SampleCollention");
+			MongoCollection<Document> collection = database.getCollection("Users");
 
 			// Create a sample document
-			Document sampleDoc = new Document("_id", "2").append("name", "John Smith");
+			Document sampleDoc = new Document("_id", (int)(Math.random() * 100)).append("name", "John Smith " + Math.random());
 
 			/// Insert the document into the collection
 			collection.insertOne(sampleDoc);
