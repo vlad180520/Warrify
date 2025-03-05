@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import React from 'react';
 import './Header.css'
 import Logo from '../assets/Logo'
-
+import pozalogo from '../assets/logo.png'
 
 const isLoggedIn = false
 function Header() {
@@ -14,7 +14,7 @@ function Header() {
         <>
             <div className="header">
                 <div className="leftSide">
-                    <Link to="/home"><Logo/></Link>
+                    <Link to="/home"><img src={pozalogo}/></Link>
                     <ul className='textSectiuni'>
                     <Link to="/home" className='textSectiuni'><li className={`listSectiuni ${location=='/home'&&'active'}`}>Home</li></Link>
                     <Link to="/dashboard" className='textSectiuni'><li className={`listSectiuni ${location=='/dashboard'&&'active'}`}>Dashboard</li></Link>
