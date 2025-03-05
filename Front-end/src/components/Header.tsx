@@ -5,19 +5,22 @@ import React from 'react';
 import './Header.css'
 import Logo from '../assets/Logo'
 
+
 const isLoggedIn = false
 function Header() {
+    
+    let location =useLocation().pathname;
     return (
         <>
             <div className="header">
                 <div className="leftSide">
                     <Link to="/home"><Logo/></Link>
                     <ul className='textSectiuni'>
-                    <Link to="/home" className='textSectiuni'><li className='listSectiuni'>Home</li></Link>
-                    <Link to="/dashboard" className='textSectiuni'><li className='listSectiuni'>Dashboard</li></Link>
-                    <Link to="/pricing" className='textSectiuni'><li className='listSectiuni'>Pricing</li></Link>
-                    <Link to="/about" className='textSectiuni'><li className='listSectiuni'>About Us</li></Link>
-                    <Link to="/contact" className='textSectiuni'><li className='listSectiuni'>Contact</li></Link>
+                    <Link to="/home" className='textSectiuni'><li className={`listSectiuni ${location=='/home'&&'active'}`}>Home</li></Link>
+                    <Link to="/dashboard" className='textSectiuni'><li className={`listSectiuni ${location=='/dashboard'&&'active'}`}>Dashboard</li></Link>
+                    <Link to="/pricing" className='textSectiuni'><li className={`listSectiuni ${location=='/pricing'&&'active'}`}>Pricing</li></Link>
+                    <Link to="/about" className='textSectiuni'><li className={`listSectiuni ${location=='/about'&&'active'}`}>About Us</li></Link>
+                    <Link to="/contact" className='textSectiuni'><li className={`listSectiuni ${location=='/contact'&&'active'}`}>Contact</li></Link>
                     </ul>
                 </div>
                 <div className="rightSide">
