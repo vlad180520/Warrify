@@ -2,11 +2,9 @@
     background-image: linear-gradient(180deg, #000096 25%, #0097ff 110%) !important;
     background-size: 100% auto;
 
-=======
     display: flex;
     align-items: center;
     height: 65vh;
->>>>>>> bf2bde7bd6a3ba50de397f11cf889df2663b7bda
 }
 
 .main-content h2 {
@@ -15,12 +13,10 @@
     border: 0;
     padding: 0;
 }
-=======
 .main-content p {
     color: rgba(255, 255, 255, 0.807);
     padding-top: 1.5vh;
     font-size: 23px;
->>>>>>> bf2bde7bd6a3ba50de397f11cf889df2663b7bda
 }
 .mtop {
     padding-top: 10vh;
