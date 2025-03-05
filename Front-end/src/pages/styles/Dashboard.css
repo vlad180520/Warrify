@@ -1,0 +1,119 @@
+.search-container {
+    position: relative;
+    width: 80vw; /* Poți ajusta lățimea maximă a căutării */
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3vh;
+  }
+  
+  /* Stiluri pentru input-ul de căutare */
+  .search-input {
+    width: 100%;
+    padding: 1.3vh 3vw 1.3vh .7vw; /* Lăsăm spațiu pe dreapta pentru SVG */
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 32px;
+    box-sizing: border-box;
+    position: relative; /* Necesitat pentru a poziționa SVG-ul */
+  }
+  
+  /* Stiluri pentru SVG-ul de căutare */
+  .search-icon {
+    position: absolute;
+    width: 1.5vw;
+    right: 1vw; /* Poziționează SVG-ul în partea dreaptă */
+    top: 50%;
+    transform: translateY(-50%); /* Centerază SVG-ul pe verticală */
+    fill: #000000;
+  }
+
+  /* Stiluri pentru secțiunea de filtre */
+.filters-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    gap: 6vw;
+    margin-bottom: 6vh;
+  }
+  .filter,.sort {
+    position: relative;
+  }
+  .dropdown {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  /* Stiluri pentru butoanele Filter și Sort */
+  /* Stiluri pentru butoanele Filter și Sort */
+  .filter-button, .sort-button {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    position: relative;
+    border: 1px solid #ccc; /* Bordura mai subțire și mai deschisă */
+    border-radius: 15px; /* Colțuri rotunjite */
+    background-color: #f9f9f9; /* Fundal deschis */
+    color: #333; /* Culoare text */
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    z-index: 11;
+    transition: all 0.3s ease; /* Efect de tranziție pentru hover */
+    width: 12vw; /* Lățimea fixă a butonului */
+    height: 5vh;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ușor efect de umbră pentru adâncire */
+  }
+  
+  .filter-button:focus, .sort-button:focus {
+    outline: none;
+  }
+  .filter-button p, .sort-button p {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  /* Efect de hover pentru butoane */
+  .filter-button:hover, .sort-button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Adâncire umbră */
+    border: 1px solid #ccc; /* Bordura mai subțire și mai deschisă */
+  }
+  
+  /* SVG-ul din interiorul butonului */
+  .filter-button svg, .sort-button svg {
+    margin-right: 10px; /* Spațiu între SVG și text */
+    width: 18px; /* Dimensiunea SVG-ului */
+    height: 18px;
+  }
+  
+  /* Dropdown-uri pentru Filter și Sort */
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #D9D9D9;
+    border: 1px solid #ccc; /* Bordura dropdown-ului */
+    border-radius: 10px;
+    width: 12vw;
+    padding-top: 4vh;
+    margin-top: -4vh;
+    display: flex;
+    flex-direction: column;
+    gap: .3vh;
+    z-index: 10;
+  }
+  .dropdown.sort {
+    right: 0;
+    gap: .9vh;
+    padding-bottom: 1vh;
+    left: auto;
+  }
+  .dropdown-icon {
+    position: absolute;
+    right: .4vw;
+  }
+  
+  .dropdown p {
+    cursor: pointer;
+  }
+  
