@@ -5,8 +5,11 @@ function Home() {
     return (
         <>
             <Header />
-            <div className="main">
-
+            <div className="background">
+                <p>Warrify</p>
+                <p>A new way of managing warranties</p>
+                <p>Efficient. Organized. Simple</p>
+                
             </div>
         </>
     )
