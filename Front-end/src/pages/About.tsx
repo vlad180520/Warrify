@@ -5,7 +5,6 @@ function About () {
         <>
             <Header />
             <div className="mainBox">
-                <div className="color"></div>
                 <div className="textBox">
                     <div className="block">
                         <h1>Overview</h1>
@@ -42,7 +41,6 @@ function About () {
                         reducing administrative bottlenecks.</p>
                     </div>
                 </div>
-                <div className="color"></div>
             </div>
         </>
     )
