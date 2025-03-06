@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './PriceCalculator.css';
 
-const PRICE_PER_TB = 0.20;
+const PRICE_PER_TB = 0.30;
 
 const PriceCalculator = () => {
   const [storage, setStorage] = useState<number>(100);
@@ -19,14 +19,14 @@ const PriceCalculator = () => {
           <div className="price-box">
             <>
             <div className="incepand">Starting at</div>
-            <div className="price">50 RON</div>
+            <div className="price">70 RON</div>
             <small>*RON per month</small>
             </>
           </div>
           
           <div className="specs">
-            <p>Management offers 500 monthly guarantees</p>
-            <p>Number of additional guarantees charged with 0.20 RON* per warranty.</p>
+            <p>Management offers 350 monthly guarantees</p>
+            <p>Number of additional guarantees charged with 0.30 RON* per warranty.</p>
             <p>Advanced warranty report</p>
           </div>
 

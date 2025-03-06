@@ -4,8 +4,8 @@ import "./PricingColumns.css";
 const plans = [
   {
     title: "Enterprise",
-    price: "15 RON",
-    garantii: "Management offers 100 monthly guarantees",
+    price: "25 RON",
+    garantii: "Management offers 120 monthly guarantees",
     av1: "Grouping guarantees into categories",
     av2: "Guarantees are collected from mail periodically",
     f1: "For individual users",
@@ -14,7 +14,7 @@ const plans = [
   },
   {
     title: "Pro",
-    price: "35 RON",
+    price: "50 RON",
     garantii: "Management offers 250 monthly guarantees",
     av1: "Extra push notifications will be sent when the guarantees expire.",
     av2: "Basic report on warranties.",
@@ -23,7 +23,7 @@ const plans = [
   },
   {
     title: "Premium",
-    price: "70 RON",
+    price: "100 RON",
     garantii: "Management offers 500+ monthly guarantees",
     av1: "Advanced report on warranties",
     av2: "24/7 support",
