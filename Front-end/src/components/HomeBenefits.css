@@ -1,25 +1,25 @@
-.garantii-benefits {
+.garantii-benefits-home {
     width: 80vw;
-    margin: 2rem auto;
+    margin-top: 7vh;
     padding: 0 1rem;
   }
-  .flex-benefit {
+  .flex-benefit-home {
     justify-content: center;
     align-items: center;
     display: flex;
     gap: 2vw;
     flex-wrap: wrap;
   }
-  .title-benefit {
-    margin-left: -2vw;
-    text-align: left;
+  .title-benefit-home {
+    border: 0;
+    text-align: center;
     color: #2d3748;
-    font-size: 2rem;
+    font-size: 2.5rem;
     padding-bottom: 4vh;
     margin-bottom: 4vh;
   }
 
-  .benefit-card {
+  .benefit-home-card {
     background: #f7fafc;
     border-radius: 12px;
     padding: 2rem;
@@ -30,17 +30,17 @@
     transition: transform 0.2s;
   }
 
-  .benefit-card:hover {
+  .benefit-home-card:hover {
     transform: translateY(-3px);
   }
 
-  .benefit-title {
+  .benefit-home-title {
     color: #1a365d;
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
 
-  .benefit-description {
+  .benefit-home-description {
     color: #4a5568;
     line-height: 1.6;
     font-size: 1.1rem;

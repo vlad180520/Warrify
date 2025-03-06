@@ -10,6 +10,7 @@
 .main-content h2 {
     color: rgb(255, 255, 255);
     font-size: 57px;
+    text-align: left !important;
     border: 0;
     padding: 0;
 }
@@ -44,4 +45,37 @@
 }
 .image img {
     width: 100%;
+}
+.dezvolta {
+    background-color: #000096;
+    width: 100vw;
+    height: 32vh;
+    color: white;
+    display: flex;
+    position: relative;
+    align-items: center;
+    font-family: Arial, sans-serif !important;
+    font-weight: bold;
+    padding-bottom: 10vh;
+    justify-content: center;
+}
+.dezvolta-1 {
+    width: 35vw;
+    font-size: 45px;
+    margin-left: 15vw;
+}
+.dezvolta-2 {
+    position: relative;
+    margin-top: 3vh;
+    color: rgba(255, 255, 255, 0.807);
+    width: 40vw;
+    margin-right: 10vw;
+    font-size: 18px;
+}
+.home-try {
+    position: absolute;
+    bottom: -10vh;
+    border-radius: 5px;
+    width: 7.5vw;
+    left: 0;
 }

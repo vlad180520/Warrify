@@ -96,7 +96,7 @@ li.listSectiuni::after {
     content: '';
     position: absolute;
     bottom: 0;
-    height: 2px;
+    height: .35vh;
     transition: .3s;
     width: 100%;
     background-color: transparent;

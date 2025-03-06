@@ -1,0 +1,83 @@
+.price-calculator {
+    width: 35vw;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .calculator-section {
+    margin: 3vh 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .storage-slider {
+    width: 100%;
+    margin-top: 2vh;
+    height: 1.2vh;
+    background: #dfe6e9;
+    border-radius: 4px;
+    outline: none;
+    -webkit-appearance: none;
+  }
+  
+  .storage-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #0984e3;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .storage-slider::-webkit-slider-thumb:hover {
+    background: #74b9ff;
+  }
+  
+  .price-result {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .price-display {
+    font-size: 2.5rem;
+    color: #0047ff;
+    font-weight: 700;
+    margin: 1.5vh 0;
+  }
+  
+  .price-note {
+    color: #636e72;
+    display: block;
+    margin-top: 0.5rem;
+  }
+  
+  h2, h3 {
+    color: #2d3436;
+    margin-bottom: 1.5vh;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  .titlu-price {
+    border: 0;
+    font-size:35px;
+  }
+  .container-price {
+    padding-top: 5vh;
+    flex-wrap: wrap;
+    display: flex;
+  }

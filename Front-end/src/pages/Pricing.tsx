@@ -2,7 +2,7 @@ import Header from "../components/Header"
 import './styles/Pricing.css'
 import PricingColumns from "../components/PricingColumns"
 import Footer from "../components/Footer"
-import GarantiiBenefits from "../components/GarantiiBenefits"
+import PriceCalculator from "../components/PriceCalculator"
 
 function Pricing() {
     return (
@@ -13,7 +13,7 @@ function Pricing() {
                     Alegeti abonamentul potrivit pentru Dvs.
                 </div>
                 <PricingColumns />
-                <GarantiiBenefits />
+                <PriceCalculator />
             </div>
             <Footer />
         </>
