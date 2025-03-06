@@ -3,9 +3,9 @@ import "./PricingColumns.css";
 
 const plans = [
   {
-    title: "Free Trial",
-    price: "0 RON",
-    garantii: "Gestionare 50 garantii lunar",
+    title: "Enterprise",
+    price: "15 RON",
+    garantii: "Gestionare 100 garantii lunar",
     av1: "Organizare garantii pe categorii",
     av2: "Preluare perioadica a garantiilor din mail",
     f1: "Destinat utilizatorilor individuali",
@@ -13,9 +13,9 @@ const plans = [
     popular: false
   },
   {
-    title: "Enterprise",
-    price: "25 RON",
-    garantii: "Gestionare 500 garantii lunar",
+    title: "Pro",
+    price: "35 RON",
+    garantii: "Gestionare 250 garantii lunar",
     av1: "Notificari push extra pentru expirarea garantiilor",
     av2: "Raport de baza al garantiilor",
     f1: "Destinat intreprinderilor mici-medii",
@@ -23,8 +23,8 @@ const plans = [
   },
   {
     title: "Premium",
-    price: "50 RON",
-    garantii: "Gestionare numar nelimitat garantii lunar",
+    price: "70 RON",
+    garantii: "Gestionare 500+ garantii lunar",
     av1: "Raport avansat al garantiilor",
     av2: "Suport 24/7",
     f1: "Destinat intreprinderilor mari",

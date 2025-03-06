@@ -27,7 +27,7 @@ function Footer() {
                     fill="#000096"
                 />
             </svg>
-            <div className="license">© Warrify 2025 Toate drepturile rezervate</div>
+            <div className="license">© Warrify 2025 All rights reserved</div>
         </footer>
     )
 }

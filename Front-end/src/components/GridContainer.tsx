@@ -52,11 +52,14 @@ function GridContainer() {
                         Warranties with less than 7 days before expiring
                     </div>
                     {specs.nrExpire &&
-                        <svg className="danger-symbol" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 22H22L12 2Z" fill="#FFD700" stroke="#856404" stroke-width="2" />
-                            <circle cx="12" cy="17" r="1" fill="#856404" />
-                            <path d="M12 6V14" stroke="#856404" stroke-width="2" stroke-linecap="round" />
-                        </svg>
+                        <svg fill="#FF0000" className="danger-symbol" xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 30.334 30.334">
+                       <g>
+                           <rect width="100%" height="100%" fill="white"/>
+                           <path d="M15.167,0C6.805,0,0.001,6.804,0.001,15.167c0,8.362,6.804,15.167,15.166,15.167c8.361,0,15.166-6.805,15.166-15.167
+                               C30.333,6.804,23.528,0,15.167,0z M17.167,25.667h-4v-4.5h4V25.667z M17.167,19.542h-4V5.167h4V19.542z"/>
+                       </g>
+                   </svg>
                     }
                 </div>
             </div>

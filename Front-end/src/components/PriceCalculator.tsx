@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './PriceCalculator.css';
 
-const PRICE_PER_TB = 0.10;
+const PRICE_PER_TB = 0.20;
 
 const PriceCalculator = () => {
   const [storage, setStorage] = useState<number>(100);
@@ -18,22 +18,23 @@ const PriceCalculator = () => {
           <h2>FlexiPro</h2>
           <div className="price-box">
             <>
-            <div className="price">35 RON</div>
+            <div className="incepand">Incepand de la</div>
+            <div className="price">50 RON</div>
             <small>*RON pe luna</small>
             </>
           </div>
           
           <div className="specs">
-            <p>""</p>
-            <p>""</p>
-            <p>""</p>
+            <p>Gestionare 350 garantiii lunar de baza</p>
+            <p>Numar garantii suplimentar taxat cu 0.20 RON* pe garantie</p>
+            <p>Raport avansat al garantiilor</p>
           </div>
 
           <ul className="features">
-            <li>""</li>
+            <li>Permite flexibilitate</li>
           </ul>
 
-          <button className="buy-button">Cumpără ""</button>
+          <button className="buy-button">Cumpără FlexiPro</button>
         </div>
         <div className="price-calculator">
           <h2>Calculator Preț Estimativ</h2>

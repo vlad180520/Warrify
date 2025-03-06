@@ -60,9 +60,10 @@
     justify-content: center;
 }
 .dezvolta-1 {
-    width: 35vw;
+    width: 30vw;
+    margin-top: -1vh;
     font-size: 45px;
-    margin-left: 15vw;
+    margin-left: 17vw;
 }
 .dezvolta-2 {
     position: relative;
@@ -70,7 +71,7 @@
     color: rgba(255, 255, 255, 0.807);
     width: 40vw;
     margin-right: 10vw;
-    font-size: 18px;
+    font-size: 17px;
 }
 .home-try {
     position: absolute;
