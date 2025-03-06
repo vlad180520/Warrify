@@ -13,11 +13,11 @@ const LoginForm = () => {
     const newErrors: typeof errors = {};
 
     if (!email) {
-      newErrors.email = 'Adresa de email este obligatorie';
+      newErrors.email = 'The email address is mandatory';
     }
 
     if (!password) {
-      newErrors.password = 'Parola este obligatorie';
+      newErrors.password = 'The password is mandatory';
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -35,7 +35,7 @@ const LoginForm = () => {
     <Header />
     <div className="login-container">
       <form onSubmit={handleSubmit} className="login-form">
-        <h2>Autentificare</h2>
+        <h2>Sign in</h2>
         
         <div className="form-group">
           <label htmlFor="email">Email</label>
@@ -50,7 +50,7 @@ const LoginForm = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="password">Parolă</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
@@ -68,13 +68,13 @@ const LoginForm = () => {
               checked={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
             />
-            Ține-mă minte
+            Remember me
           </label>
-          <a href="/forgot-password">Ai uitat parola?</a>
+          <a href="/forgot-password">Forgot your password?</a>
         </div>
 
         <button type="submit" className="submit-btn">
-          Conectează-te
+          Login
         </button>
       </form>
     </div>

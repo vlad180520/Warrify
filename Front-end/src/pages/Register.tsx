@@ -23,25 +23,25 @@ const Register = () => {
     const newErrors: typeof errors = {};
 
     if (!name.trim()) {
-      newErrors.name = 'Numele este obligatoriu';
+      newErrors.name = 'The name is mandatory';
     }
 
     if (!email) {
-      newErrors.email = 'Adresa de email este obligatorie';
+      newErrors.email = 'The email in mandatory';
     }
 
     if (!password) {
-      newErrors.password = 'Parola este obligatorie';
+      newErrors.password = 'The password in mandatory';
     } else if (password.length < 8) {
-      newErrors.password = 'Parola trebuie să aibă minim 8 caractere';
+      newErrors.password = 'Password must contain at least 8 characters';
     }
 
     if (password !== confirmPassword) {
-      newErrors.confirmPassword = 'Parolele nu coincid';
+      newErrors.confirmPassword = 'Passwords do not match';
     }
 
     if (!terms) {
-      newErrors.terms = 'Trebuie să accepți termenii și condițiile';
+      newErrors.terms = 'You have to accept terms and conditions';
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -59,10 +59,10 @@ const Register = () => {
     <Header />
     <div className="auth-container">
       <form onSubmit={handleSubmit} className="auth-form">
-        <h2>Înregistrare</h2>
+        <h2>Register</h2>
 
         <div className="form-group">
-          <label htmlFor="name">Nume complet</label>
+          <label htmlFor="name">Full name</label>
           <input
             type="text"
             id="name"
@@ -86,7 +86,7 @@ const Register = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="password">Parolă</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
@@ -98,7 +98,7 @@ const Register = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="confirmPassword">Confirmă parola</label>
+          <label htmlFor="confirmPassword">Confirm password</label>
           <input
             type="password"
             id="confirmPassword"
@@ -118,13 +118,13 @@ const Register = () => {
               checked={terms}
               onChange={(e) => setTerms(e.target.checked)}
             />
-            Accept <a href="/terms">termenii și condițiile</a>
+            Accept <a href="/terms">terms and conditions</a>
           </label>
         </div>
         {errors.terms && <span className="error-message eroaretermeni">{errors.terms}</span>}
 
         <button type="submit" className="submit-btn">
-          Creează cont
+          Create account
         </button>
       </form>
     </div>

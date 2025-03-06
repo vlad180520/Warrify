@@ -5,29 +5,29 @@ const plans = [
   {
     title: "Enterprise",
     price: "15 RON",
-    garantii: "Gestionare 100 garantii lunar",
-    av1: "Organizare garantii pe categorii",
-    av2: "Preluare perioadica a garantiilor din mail",
-    f1: "Destinat utilizatorilor individuali",
+    garantii: "Management offers 100 monthly guarantees",
+    av1: "Grouping guarantees into categories",
+    av2: "Guarantees are collected from mail periodically",
+    f1: "For individual users",
 
     popular: false
   },
   {
     title: "Pro",
     price: "35 RON",
-    garantii: "Gestionare 250 garantii lunar",
-    av1: "Notificari push extra pentru expirarea garantiilor",
-    av2: "Raport de baza al garantiilor",
-    f1: "Destinat intreprinderilor mici-medii",
+    garantii: "Management offers 250 monthly guarantees",
+    av1: "Extra push notifications will be sent when the guarantees expire.",
+    av2: "Basic report on warranties.",
+    f1: "Intended for small-medium enterprises",
     popular: true
   },
   {
     title: "Premium",
     price: "70 RON",
-    garantii: "Gestionare 500+ garantii lunar",
-    av1: "Raport avansat al garantiilor",
-    av2: "Suport 24/7",
-    f1: "Destinat intreprinderilor mari",
+    garantii: "Management offers 500+ monthly guarantees",
+    av1: "Advanced report on warranties",
+    av2: "24/7 support",
+    f1: "Intended for bigger enterprises",
     popular: false
   }
 ];
@@ -37,17 +37,17 @@ const PricingColumns = () => {
     <div className="pricing-container">
       {plans.map((plan, index) => (
         <div key={index} className="pricing-column">
-          {plan.popular && <div className="popular-badge">Cel mai popular</div>}
+          {plan.popular && <div className="popular-badge">The most popular</div>}
           <h2>{plan.title}</h2>
           <div className="price-box">
             {plan.price!='0 RON'&&
             <>
             <div className="price">{plan.price}</div>
-            <small>*RON pe luna</small>
+            <small>*RON per month</small>
             </>
             }
             {plan.price=='0 RON'&&
-            <><div className="price">Gratis</div>
+            <><div className="price">Free</div>
             <br></br>
             </>
             }
@@ -63,7 +63,7 @@ const PricingColumns = () => {
             <li>{plan.f1}</li>
           </ul>
 
-          <button className="buy-button">Cumpără {plan.title}</button>
+          <button className="buy-button">Buy {plan.title}</button>
         </div>
       ))}
     </div>

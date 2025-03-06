@@ -11,18 +11,18 @@ function Pricing() {
             <Header />
             <div className="mainPricing">
                 <div className="title">
-                    Alegeti abonamentul potrivit pentru Dvs.
+                    Pick the subscription that suits you best
                 </div>
                 <PricingColumns />
                 <div className="free">
                     <div className="stanga-free">
-                        <h2>Incepeti cu abonamentul nostru gratuit</h2>
+                        <h2>Get started with our free subscription</h2>
                         <ul className="ul-free">
                             <li className="li-free">
-                                Gestionare 20 garantii lunar
+                                Management offers 20 monthly guarantees
                             </li>
                             <li className="li-free">
-                                Importare manuala a garantiilor din email
+                                Manually import guarantees from email
                             </li>
                         </ul>
                     </div>
