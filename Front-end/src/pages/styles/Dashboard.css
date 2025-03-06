@@ -3,6 +3,7 @@
     width: 80vw; /* Poți ajusta lățimea maximă a căutării */
     margin-top: 5vh;
     margin-left: auto;
+    font-family: unifysans, helvetica, arial, lato, sans-serif !important;
     margin-right: auto;
     margin-bottom: 3vh;
   }
@@ -10,10 +11,11 @@
   /* Stiluri pentru input-ul de căutare */
   .search-input {
     width: 100%;
-    padding: 1.3vh 3vw 1.3vh .7vw; /* Lăsăm spațiu pe dreapta pentru SVG */
+    padding: 1vh 3vw 1vh 1vw; /* Lăsăm spațiu pe dreapta pentru SVG */
     border: 1px solid black;
     border-radius: 10px;
-    font-size: 32px;
+    font-size: 27px;
+    margin-top: 0;
     box-sizing: border-box;
     position: relative; /* Necesitat pentru a poziționa SVG-ul */
   }
@@ -41,8 +43,8 @@
     position: relative;
   }
   .dropdown {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 15px;
+    font-weight: 550;
   }
   /* Stiluri pentru butoanele Filter și Sort */
   /* Stiluri pentru butoanele Filter și Sort */
@@ -55,7 +57,7 @@
     border-radius: 15px; /* Colțuri rotunjite */
     background-color: #f9f9f9; /* Fundal deschis */
     color: #333; /* Culoare text */
-    font-size: 24px;
+    font-size: 25px;
     cursor: pointer;
     text-align: center;
     z-index: 11;

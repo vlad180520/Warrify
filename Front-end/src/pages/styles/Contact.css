@@ -10,13 +10,13 @@
     background: white;
     border: 5px solid #0047ff;
     border-radius: 20px;
-    box-shadow: 0 0 15px 0 #0047ff;
+    box-shadow: 0 0 7px 0 #0047ff;
     width: 70vw;
     height: 60vh;
     display: flex;
 }
 
-form, label {
+.form-contact, .label-contact {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -25,7 +25,7 @@ form, label {
     font-family: inherit;
 }
 
-input, textarea {
+.input-contact, textarea {
     background-color: white;
     border: 3px solid #0047ff;
     border-radius: 7px;
@@ -37,14 +37,21 @@ input, textarea {
     min-height: 2em;
 
     font-family: inherit;
-    padding-left: 4px;
+    padding: .6vh .5vw;
 }
 
 textarea {
-    padding-top: 4px;
+    padding: .6vh .5vw;
 }
-
-input[type="submit"] {
+.image-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-contact img{
+    height: 50vh;
+}
+input.input-contact[type="submit"] {
     width: 20%;
     border-radius: 7px;
     font-size: 16px;

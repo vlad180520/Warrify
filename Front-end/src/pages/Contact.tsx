@@ -7,18 +7,18 @@ function Contact () {
             <Header />
             <div className="maxBox">
                 <div className="background-box">
-                    <form action="">
-                        <label htmlFor="">
+                    <form className="form-contact" action="">
+                        <label className="label-contact"htmlFor="">
                             What's your email?
-                            <input type="email" placeholder="warrify@mail.com"/>
+                            <input className="input-contact" type="email" placeholder="warrify@mail.com"/>
                         </label>
-                        <label htmlFor="">
+                        <label className="label-contact" htmlFor="">
                             Describe your problem
                             <textarea rows={6}/>
                         </label>
-                        <input type="submit" />
+                        <input className="input-contact" type="submit" />
                     </form>
-                    <div className="image">
+                    <div className="image-contact">
                         <img src={left} />
                     </div>
                 </div>
