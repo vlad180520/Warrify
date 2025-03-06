@@ -44,13 +44,14 @@ function Home() {
             </div>
             <div className="dezvolta">
                 <div className="dezvolta-1">
-                    Dezvoltă-ți<br></br> businessul cu Warrify
+                    Make your business <br /> grow with Warrify
                 </div>
                 <div className="dezvolta-2">
-                Adună-ți echipa online cu Warrify.
-                De la liber profesioniști la startupuri și până la întreprinderi, Warrify este instrumentul online
-                 perfect pentru a te ajuta să îți dezvolți businessul și echipa. Stochează și protejează garantiile
-                  și transformă cu Warrify modul în care echipele tale colaborează.
+                Bring your team together online with Warrify.
+                Warrify is an online tool that can help you grow 
+                your business and team, whether you're a freelancer, 
+                a startup, or a business. Stores and safeguards guarantees, 
+                and transforms how your teams collaborate.
                 <Link to="/register" className='home-try button buttoninvert'>Try for free</Link>
                 </div>
             </div>

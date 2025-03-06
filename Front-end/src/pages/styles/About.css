@@ -1,0 +1,35 @@
+.mainBox {
+    padding-top: 50px;
+    display: flex;
+}
+
+.textBox {
+    width: 50vw;
+}
+.paragraph {
+    width: 50vw;
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.block {
+    padding-bottom: 90px;
+}
+
+.block > h1 {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
+.block > p {
+    padding-bottom: 10px;
+}
+.color {
+    width: 15%;
+    height: 100vh;
+    background-color: #0047ff;
+    margin: 0;
+    margin-top: -50px;
+}
