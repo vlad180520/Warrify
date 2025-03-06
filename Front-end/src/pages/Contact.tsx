@@ -9,6 +9,10 @@ function Contact () {
                 <div className="background-box">
                     <form className="form-contact" action="">
                         <label className="label-contact"htmlFor="">
+                            What's your name?
+                            <input className="input-contact" type="name" placeholder="John Smith"/>
+                        </label>
+                        <label className="label-contact"htmlFor="">
                             What's your email?
                             <input className="input-contact" type="email" placeholder="warrify@mail.com"/>
                         </label>
