@@ -12,3 +12,54 @@
     width: 90vw;
     margin-bottom: 10vh;
 }
+.free {
+    background-color: rgba(241, 241, 241, 0.834);
+    border: 1px solid rgba(203, 201, 201, 0.653);
+    border-radius: 5px;
+    width: 70vw;
+    height: 22.5vh;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+}
+.stanga-free {
+    position: relative;
+    margin-left: 2vw;
+}
+.stanga-free h2{
+    padding-top: 4vh;
+    font-size: 28px;
+    border: 0;
+    padding-bottom: 2vh;
+    font-weight: 600;
+}
+.dreapta-free {
+    margin-right: 3vw;
+    display: flex;
+    gap: 10%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dreapta-free p {
+    font-size: 40px;
+    font-weight: 600;
+}
+.free-try {
+    border-radius: 5px;
+    width: 7.5vw;
+}
+.ul-free {
+    flex-direction: column;
+    gap: 1vh;
+    margin-left: 0;
+    text-align: left;
+}
+.li-free {
+    margin-left: .5vw;
+}
+.li-free::before {
+    content: '✓';
+    font-weight: bold;
+    padding-right: 1vw;
+}
