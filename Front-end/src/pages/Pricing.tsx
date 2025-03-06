@@ -19,7 +19,7 @@ function Pricing() {
                         <h2>Incepeti cu abonamentul nostru gratuit</h2>
                         <ul className="ul-free">
                             <li className="li-free">
-                                Gestionare 50 garantii lunar
+                                Gestionare 20 garantii lunar
                             </li>
                             <li className="li-free">
                                 Importare manuala a garantiilor din email

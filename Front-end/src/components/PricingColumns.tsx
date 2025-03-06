@@ -5,7 +5,7 @@ const plans = [
   {
     title: "Enterprise",
     price: "15 RON",
-    garantii: "Gestionare 80 garantii lunar",
+    garantii: "Gestionare 100 garantii lunar",
     av1: "Organizare garantii pe categorii",
     av2: "Preluare perioadica a garantiilor din mail",
     f1: "Destinat utilizatorilor individuali",
@@ -24,7 +24,7 @@ const plans = [
   {
     title: "Premium",
     price: "70 RON",
-    garantii: "Gestionare 1000+ garantii lunar",
+    garantii: "Gestionare 500+ garantii lunar",
     av1: "Raport avansat al garantiilor",
     av2: "Suport 24/7",
     f1: "Destinat intreprinderilor mari",
