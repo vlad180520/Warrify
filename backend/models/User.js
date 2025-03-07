@@ -13,7 +13,7 @@ import bcrypt from 'bcrypt';
 // });
 const userSchema = new mongoose.Schema({
   // userId: { type: mongoose.Schema.Types.ObjectId, auto: true },
-  username: { type: String, required: true, unique: true },
+  username: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   terms: { type: Boolean, required: true },

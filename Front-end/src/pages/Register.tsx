@@ -2,6 +2,7 @@
 import Header from '../components/Header';
 import { useState } from 'react';
 import './styles/Register.css';
+import { Navigate } from 'react-router-dom';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -49,14 +50,14 @@ const Register = () => {
       return;
     }
 
+    const username = name
     // Trimite datele la server
     // console.log('Register data:', { name, email, password, terms });
-
     try {
       const response = await fetch("http://localhost:8080/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password, terms }),
+        body: JSON.stringify({ username, email, password, terms }),
         // body: JSON.stringify({ userId, email, username, firstName, lastName, password, dateOfBirth }),
       });
   
@@ -66,7 +67,7 @@ const Register = () => {
       if (response.ok) {
         console.log("Registration Successful:", data);
         alert("Account created successfully!");
-        // navigate("/login");
+        <Navigate to="/login"></Navigate>
       } else {
         console.error("Registration Failed:", data);
         setErrors({ email: data.message || "Registration failed." });

@@ -38,7 +38,7 @@ function Home() {
             </div>
             <div className="main-content">
                 <div className="text second second-2">
-                    <h2>Get rid of stress with<br></br>push reminders</h2>
+                    <h2>Get rid of stress with push <br></br>reminders</h2>
                     <p>Breathe easy with automated expiry alerts</p>
                     <p>Never worry again about the expiration date</p>
                     <p>Automation handles the heavy lifting for you</p>
