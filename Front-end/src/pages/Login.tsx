@@ -8,7 +8,7 @@ const LoginForm = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: typeof errors = {};
 
@@ -26,7 +26,28 @@ const LoginForm = () => {
     }
 
     // Trimite datele la server
-    console.log('Login data:', { email, password, rememberMe });
+    // console.log('Login data:', { email, password, rememberMe });
+
+    try {
+      const response = await fetch("http://localhost:8080/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "tsconfig/json" },
+        body: JSON.stringify({ email, password }),
+      });
+  
+      const data = await response.json();
+      console.log("Login Response:", data);
+  
+      if (response.ok) {
+        alert("Login successful!"); // Replace with proper navigation
+      } else {
+        alert(data.message || "Login failed. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      alert("An error occurred. Please try again.");
+    }
+
     setErrors({});
   };
 

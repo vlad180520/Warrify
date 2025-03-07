@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import userRoutes from './routes/userRoutes.js';
+import authRoutes from './routes/authRoutes.js';
 import warrantyRoutes from './routes/warrantyRoutes.js';
 import dotenv from 'dotenv';
 dotenv.config();
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 // Routes
 app.use('/api', userRoutes);
 app.use('/api', warrantyRoutes);
+// app.use('/api', authRoutes);
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {

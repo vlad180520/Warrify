@@ -18,7 +18,7 @@ const Register = () => {
   }>({});
 
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: typeof errors = {};
 
@@ -50,8 +50,33 @@ const Register = () => {
     }
 
     // Trimite datele la server
-    console.log('Register data:', { name, email, password, terms });
-    setErrors({});
+    // console.log('Register data:', { name, email, password, terms });
+
+    try {
+      const response = await fetch("http://localhost:8080/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password, terms }),
+        // body: JSON.stringify({ userId, email, username, firstName, lastName, password, dateOfBirth }),
+      });
+  
+      const data = await response.json();
+      console.log("Server Response:", data);
+      
+      if (response.ok) {
+        console.log("Registration Successful:", data);
+        alert("Account created successfully!");
+        // navigate("/login");
+      } else {
+        console.error("Registration Failed:", data);
+        setErrors({ email: data.message || "Registration failed." });
+      }
+    } catch (error) {
+      console.error("Error during registration:", error);
+      setErrors({ email: "An error occurred. Please try again later." });
+    }
+
+    // setErrors({});
   };
 
   return (

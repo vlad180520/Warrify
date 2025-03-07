@@ -7,10 +7,11 @@ dotenv.config();
 
 const router = express.Router();
 
-// Signup Route
-router.post('/signup', async (req, res) => {
+// Register Route
+router.post('/register', async (req, res) => {
   try {
-    const { userId, email, username, firstName, lastName, password, dateOfBirth } = req.body;
+    // const { userId, email, username, firstName, lastName, password, dateOfBirth } = req.body;
+    const { username, email, password, terms} = req.body;
 
     // Check if user already exists
     const existingUser = await User.findOne({ email });
@@ -19,7 +20,8 @@ router.post('/signup', async (req, res) => {
     }
 
     // Create new user
-    const user = new User({ userId, email, username, firstName, lastName, password, dateOfBirth });
+    // const user = new User({ userId, email, username, firstName, lastName, password, dateOfBirth });
+    const user = new User({ username, email, password, terms });
     await user.save();
 
     // Generate access token
