@@ -3,8 +3,12 @@ import Header from '../components/Header';
 import { useState } from 'react';
 import './styles/Register.css';
 import { Navigate } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 const Register = () => {
+
+  
+  const navigate = useNavigate()
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -65,9 +69,8 @@ const Register = () => {
       console.log("Server Response:", data);
       
       if (response.ok) {
-        console.log("Registration Successful:", data);
-        alert("Account created successfully!");
-        <Navigate to="/login"></Navigate>
+        console.log("Registration Successful");
+        navigate('/')
       } else {
         console.error("Registration Failed:", data);
         setErrors({ email: data.message || "Registration failed." });
@@ -82,7 +85,6 @@ const Register = () => {
 
   return (
     <>
-    <Header />
     <div className="auth-container">
       <form onSubmit={handleSubmit} className="auth-form">
         <h2>Register</h2>

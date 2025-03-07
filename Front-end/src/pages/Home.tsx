@@ -12,7 +12,6 @@ import { Link } from "react-router-dom"
 function Home() {
     return (
         <>
-            <Header />
             <div className="background">
                 <div className="main-content">
                     <div className="text">

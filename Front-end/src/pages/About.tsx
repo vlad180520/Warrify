@@ -3,7 +3,6 @@ import './styles/About.css'
 function About () {
     return (
         <>
-            <Header />
             <div className="mainBox">
                 <div className="textBox">
                     <div className="block">

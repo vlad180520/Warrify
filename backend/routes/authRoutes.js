@@ -37,11 +37,11 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
-
+    console.log(email)
     // Find user by email
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(400).json({ message: 'Invalid credentials' });
+      return res.status(400).json({ message: 'User does not exist' });
     }
 
     // Compare passwords
@@ -52,8 +52,8 @@ router.post('/login', async (req, res) => {
 
     // Generate access token
     ///const accessToken = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-
-    res.status(200).json({  });
+    const userId = user._id
+    res.status(200).json({ userId});
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message });
   }

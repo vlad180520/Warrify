@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import './styles/Login.css';
 import Header from '../components/Header';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 const LoginForm = () => {
+  const navigate = useNavigate()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
@@ -27,11 +30,10 @@ const LoginForm = () => {
 
     // Trimite datele la server
     // console.log('Login data:', { email, password, rememberMe });
-
     try {
       const response = await fetch("http://localhost:8080/api/login", {
         method: "POST",
-        headers: { "Content-Type": "tsconfig/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
   
@@ -39,7 +41,12 @@ const LoginForm = () => {
       console.log("Login Response:", data);
   
       if (response.ok) {
-        alert("Login successful!"); // Replace with proper navigation
+        Cookies.set('UID',data.userId, { expires: 7, path: '' });
+        console.log('Autentificare reușită!');
+        setEmail('');
+        setPassword('');
+        setErrors({});
+        navigate('/');
       } else {
         alert(data.message || "Login failed. Please try again.");
       }
@@ -53,7 +60,6 @@ const LoginForm = () => {
 
   return (
     <div className='login'>
-    <Header />
     <div className="login-container">
       <form onSubmit={handleSubmit} className="login-form">
         <h2>Sign in</h2>

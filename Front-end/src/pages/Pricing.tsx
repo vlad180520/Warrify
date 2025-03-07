@@ -8,7 +8,6 @@ import { Link } from "react-router-dom"
 function Pricing() {
     return (
         <>
-            <Header />
             <div className="mainPricing">
                 <div className="title">
                     Pick the subscription that suits you best
