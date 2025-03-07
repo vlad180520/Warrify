@@ -3,13 +3,22 @@ import { Link, Navigate, useLocation } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react'
 import React from 'react';
 import './Header.css'
+import Cookies from 'js-cookie'
 import Logo from '../assets/Logo'
 import pozalogo from '../assets/logo.png'
+import { useNavigate } from 'react-router-dom';
 
-const isLoggedIn = false
-function Header() {
+interface HeaderProps {
+    isLoggedIn?: boolean
+}
+const Header = ({ isLoggedIn }: HeaderProps) => {
     
+    const navigate = useNavigate()
     let location =useLocation().pathname;
+    const logOut = () => {
+        Cookies.remove("UID")
+        navigate('/')
+      }
     return (
         <>
             <div className="header">
@@ -27,7 +36,7 @@ function Header() {
                     <ul className='textSectiuni'>
                         {isLoggedIn && <>
                             <li>
-                                <Link to="/home" className='button buttoninvert'>Premium</Link>
+                                <button onClick={logOut} className='button buttoninvert'>Logout</button>
                             </li>
                             <li>
                                 <Link to="/profile" className='button'>Profile</Link>

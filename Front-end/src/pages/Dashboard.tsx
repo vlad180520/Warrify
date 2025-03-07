@@ -5,23 +5,25 @@ import { useState } from "react";
 import './styles/Dashboard.css'
 import linieorizontala from './../assets/linie-orizontala.svg';
 
-function Dashboard() {
+interface DashProps {
+    isLoggedIn?: boolean
+}
+
+const Dashboard = ({ isLoggedIn }: DashProps) => {
 
     const handleSortSelection = (option: any) => {
-      };    
+    };
     const [isSortOpen, setIsSortOpen] = useState(false);
-    const loggedIn = true;
     const [searchQuery, setSearchQuery] = useState("");
     const handleSearchChange = (e: any) => {
         setSearchQuery(e.target.value);
     };
     const toggleSortDropdown = () => {
         setIsSortOpen(!isSortOpen);
-      };
+    };
     return (
         <>
-            <Header />
-            {!loggedIn && <LoginLightbox />}
+            {!isLoggedIn && <LoginLightbox />}
             <GridContainer />
             <div className="search-container">
                 <input

@@ -1,6 +1,6 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
-import User from '../models/Users.js';
+import User from '../models/User.js'
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -25,9 +25,9 @@ router.post('/register', async (req, res) => {
     await user.save();
 
     // Generate access token
-    const accessToken = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    // const accessToken = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-    res.status(201).json({ accessToken });
+    res.status(201).json({  });
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
@@ -37,11 +37,11 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
-
+    console.log(email)
     // Find user by email
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(400).json({ message: 'Invalid credentials' });
+      return res.status(400).json({ message: 'User does not exist' });
     }
 
     // Compare passwords
@@ -51,9 +51,9 @@ router.post('/login', async (req, res) => {
     }
 
     // Generate access token
-    const accessToken = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-
-    res.status(200).json({ accessToken });
+    ///const accessToken = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    const userId = user._id
+    res.status(200).json({ userId});
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message });
   }

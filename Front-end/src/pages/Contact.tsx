@@ -4,7 +4,6 @@ import left from "../assets/people.jpg"
 function Contact () {
     return (
         <>
-            <Header />
             <div className="maxBox">
                 <div className="background-box">
                     <form className="form-contact" action="">
