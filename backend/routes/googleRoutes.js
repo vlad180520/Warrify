@@ -3,21 +3,17 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 import { google } from 'googleapis';
 import { createHash } from 'crypto';
-import pdfreader from 'pdfreader';
 import session from 'express-session';
+import pdf from 'pdf-parse';
 
-const { Parser } = pdfreader;
 const router = express.Router();
 
 // 1. Configurare middleware
 router.use(session({
-    secret: process.env.SESSION_SECRET || 'default-secret-key',
+    secret: process.env.SESSION_SECRET || 'default-secret',
     resave: false,
     saveUninitialized: true,
-    cookie: { 
-        secure: process.env.NODE_ENV === 'production',
-        maxAge: 3600000 // 1 oră
-    }
+    cookie: { secure: false }
 }));
 
 // 2. Configurare OAuth2 Google
@@ -29,33 +25,49 @@ const oauth2Client = new google.auth.OAuth2(
 
 // 3. Cache și constante
 const warrantyCache = new Map();
-const CONCURRENT_REQUESTS = 3;
-const REQUEST_TIMEOUT = 15000;
+const MAX_CONCURRENT_REQUESTS = 3;
+const REQUEST_TIMEOUT = 30000;
 
-// 4. Funcție extragere text PDF cu gestionare erori
+// 4. Funcție extragere text PDF cu retry
+// Corectare import
+
+// Funcția corectă de extragere text
+// 4. Funcție extragere text PDF îmbunătățită
 async function extractPDFText(buffer) {
-    return new Promise((resolve, reject) => {
-        let text = '';
-        const parser = new Parser();
-        
-        parser.parseBuffer(buffer, (err, item) => {
-            if (err) {
-                console.error('Eroare parsare PDF:', err);
-                return reject(err);
-            }
-            if (!item) {
-                const cleanedText = text
-                    .replace(/\s+/g, ' ')
-                    .replace(/[^a-zA-Z0-9ăâîșțĂÂÎȘȚ ]/g, ' ')
-                    .substring(0, 3000);
-                return resolve(cleanedText);
-            }
-            if (item.text) text += item.text + ' ';
-        });
-    });
+    try {
+        // Verificare buffer valid
+        if (!Buffer.isBuffer(buffer) || buffer.length < 4) {
+            throw new Error('Buffer invalid pentru PDF');
+        }
+
+        // Verificare header PDF (primele 4 bytes trebuie să fie %PDF)
+        const header = buffer.toString('hex', 0, 4);
+        if (header !== '25504446') { // %PDF în hex
+            throw new Error('Fișierul nu este un PDF valid');
+        }
+
+        const data = await pdf(buffer);
+        let text = data.text;
+
+        // Curățare text păstrând diacritice
+        text = text
+            .replace(/\s+/g, ' ')
+            .replace(/[^\p{L}\p{N}\s]/gu, ' ') // Păstrează litere, numere și spații
+            .replace(/\s{2,}/g, ' ')
+            .substring(0, 3000)
+            .trim();
+
+        console.log('Text extras:', text.substring(0, 200) + '...'); // Debug logging
+        return text;
+
+    } catch (error) {
+        console.error('Eroare extragere text:', error.message);
+        // Returnează string gol pentru PDF-uri cu probleme
+        return '';
+    }
 }
 
-// 5. Sistem îmbunătățit de validare
+// 5. Sistem validare îmbunătățit
 async function isWarrantyDocument(pdfBuffer) {
     const contentHash = createHash('sha256').update(pdfBuffer).digest('hex');
     
@@ -66,15 +78,17 @@ async function isWarrantyDocument(pdfBuffer) {
     try {
         const pdfText = await extractPDFText(pdfBuffer);
         
-        // Verificare în trei etape
-        const hasKeywords = /garan[țt]ie|valabilitate|service|repara[țt]ie/i.test(pdfText);
-        const hasStructure = /(model|serie).*[\dA-Z]{4,}/i.test(pdfText) 
-                          && /(perioadă|valabil).*(\d{1,2}\s(luni|ani))/i.test(pdfText);
-        
-        if (!hasKeywords || !hasStructure) return false;
+        // Verificare cu DeepSeek
+        const prompt = `Acest text conține toate elementele unui certificat de garanție valid?RASPUNDE STRICT CU DA SAU NU
+            Căutați:
+            1. Denumire produs și model specific
+            2. Termen clar de valabilitate
+            3. Condiții de acoperire a defectelor
+            4. Date de contact pentru service
+            
+            Text: ${pdfText.substring(0, 2500)}
+            Răspundeți strict cu DA sau NU.`;
 
-        // Verificare finală cu AI
-        const prompt = `Este acesta un document de garanție valid? Răspunde doar cu DA sau NU.\n${pdfText.substring(0, 2000)}`;
         const response = await axios.post(
             "https://api.deepseek.com/v1/chat/completions",
             {
@@ -92,8 +106,11 @@ async function isWarrantyDocument(pdfBuffer) {
             }
         );
 
-        const result = response.data.choices[0].message.content.trim().toUpperCase() === "DA";
+        const aiResponse = response.data.choices[0].message.content.trim().toUpperCase();
+        const result = (aiResponse === "DA");
+        console.log(result)
         warrantyCache.set(contentHash, result);
+        
         return result;
 
     } catch (error) {
@@ -119,7 +136,6 @@ router.get("/auth/google/callback", async (req, res) => {
         req.session.accessToken = tokens.access_token;
         res.redirect('/api/emails');
     } catch (error) {
-        console.error('Eroare autentificare:', error);
         res.redirect(`${process.env.FRONTEND_URL}/error?code=auth_failed`);
     }
 });
@@ -127,38 +143,36 @@ router.get("/auth/google/callback", async (req, res) => {
 router.get("/api/emails", async (req, res) => {
     try {
         const accessToken = req.session.accessToken;
-        if (!accessToken) {
-            return res.status(401).json({ error: "Necesită autentificare" });
-        }
+        if (!accessToken) return res.redirect('/auth/google');
 
         const messages = await fetchAllMessages(accessToken);
-        const warranties = [];
+        const results = [];
         
-        // Procesare serială pentru fiabilitate
-        for (const [index, message] of messages.entries()) {
-            if (index % CONCURRENT_REQUESTS === 0) {
+        // Procesare controlată
+        for (let i = 0; i < messages.length; i++) {
+            if (i > 0 && i % MAX_CONCURRENT_REQUESTS === 0) {
                 await new Promise(resolve => setTimeout(resolve, 1000));
             }
             
             try {
-                const result = await processSingleEmail(message.id, accessToken);
-                if (result) warranties.push(result);
+                const result = await processSingleEmail(messages[i].id, accessToken);
+                if (result) results.push(result);
             } catch (error) {
-                console.error(`Eroare procesare ${message.id}:`, error.message);
+                console.error(`Eroare mesaj ${i}:`, error.message);
             }
         }
 
         res.json({
-            total: warranties.length,
-            documents: warranties
+            total: results.length,
+            documents: results.filter(doc => doc.hasWarranty)
         });
     } catch (error) {
-        console.error('Eroare procesare:', error);
         res.status(500).json({ error: error.message });
     }
 });
 
-// 7. Funcții helper
+const MAX_EMAILS = 10
+// 7. Funcții helper actualizate
 async function fetchAllMessages(token) {
     let messages = [];
     let pageToken = null;
@@ -170,28 +184,23 @@ async function fetchAllMessages(token) {
                 {
                     headers: { Authorization: `Bearer ${token}` },
                     params: {
-                        maxResults: 50,
+                        maxResults: 10,
                         pageToken,
-                        q: "has:attachment (mimeType:application/pdf) newer_than:1y"
+                        q: "has:attachment (mimeType:application/pdf OR filename:.pdf)"
                     },
                     timeout: REQUEST_TIMEOUT
                 }
             );
 
-            const validMessages = response.data.messages
-                ?.filter(msg => msg?.id)
-                ?.map(msg => ({ id: msg.id })) || [];
-
-            messages = messages.concat(validMessages);
+            messages = messages.concat(response.data.messages || []);
             pageToken = response.data.nextPageToken;
-
         } catch (error) {
             console.error('Eroare preluare mesaje:', error.message);
             break;
         }
-    } while (pageToken);
+    } while (pageToken && messages.length < MAX_EMAILS);
 
-    return messages;
+    return messages.filter(msg => msg?.id);
 }
 
 async function processSingleEmail(id, token) {
@@ -205,7 +214,10 @@ async function processSingleEmail(id, token) {
             }
         );
 
-        const attachments = extractPDFAttachments(msgRes.data.payload?.parts || []);
+        const parts = msgRes.data.payload?.parts || [];
+        const attachments = extractPDFAttachments(parts);
+        const warrantyAttachments = [];
+
         for (const attachment of attachments) {
             try {
                 const attachmentRes = await axios.get(
@@ -218,55 +230,47 @@ async function processSingleEmail(id, token) {
 
                 const pdfBuffer = Buffer.from(attachmentRes.data.data, 'base64');
                 if (await isWarrantyDocument(pdfBuffer)) {
-                    return formatEmailData(msgRes.data, attachment.filename);
+                    warrantyAttachments.push({
+                        filename: attachment.filename,
+                        size: attachment.size
+                    });
                 }
             } catch (error) {
                 console.error(`Eroare atașament ${attachment.attachmentId}:`, error.message);
             }
         }
-        return null;
+
+        return warrantyAttachments.length > 0 ? {
+            id,
+            subject: getHeader(msgRes.data.payload.headers, 'Subject'),
+            from: getHeader(msgRes.data.payload.headers, 'From'),
+            date: getHeader(msgRes.data.payload.headers, 'Date'),
+            attachments: warrantyAttachments
+        } : null;
+
     } catch (error) {
         console.error(`Eroare procesare ${id}:`, error.message);
         return null;
     }
 }
 
+// Utilitare
 function extractPDFAttachments(parts, attachments = []) {
     parts.forEach(part => {
-        try {
-            if (part.mimeType === 'application/pdf' && part.body?.attachmentId) {
-                attachments.push({
-                    filename: part.filename || `document-${Date.now()}.pdf`,
-                    attachmentId: part.body.attachmentId
-                });
-            }
-            if (part.parts) extractPDFAttachments(part.parts, attachments);
-        } catch (error) {
-            console.error('Eroare procesare parte:', error);
+        if (part.mimeType === 'application/pdf' || part.filename?.endsWith('.pdf')) {
+            attachments.push({
+                filename: part.filename || `document-${Date.now()}.pdf`,
+                size: part.body?.size || 0,
+                attachmentId: part.body?.attachmentId
+            });
         }
+        if (part.parts) extractPDFAttachments(part.parts, attachments);
     });
     return attachments;
 }
 
-function formatEmailData(emailData, filename) {
-    try {
-        const headers = emailData.payload.headers.reduce((acc, header) => {
-            acc[header.name.toLowerCase()] = header.value;
-            return acc;
-        }, {});
-
-        return {
-            id: emailData.id,
-            subject: headers.subject || "Fără subiect",
-            from: headers.from,
-            date: headers.date || new Date().toISOString(),
-            filename,
-            snippet: emailData.snippet?.substring(0, 100) + '...'
-        };
-    } catch (error) {
-        console.error('Eroare formatare email:', error);
-        return null;
-    }
+function getHeader(headers, name) {
+    return headers.find(h => h.name === name)?.value || 'Necunoscut';
 }
 
 export default router;
