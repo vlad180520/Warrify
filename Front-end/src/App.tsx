@@ -51,7 +51,6 @@ function App() {
           <Route path="/contact" element={<Contact />}/>
           <Route path="/pricing" element={<Pricing />}/>
           <Route path="/not-found" element={<NotFound />}/>
-          <Route path="*" element={<Navigate to='/not-found' />} />
         </Routes>
       </Router>
     </>

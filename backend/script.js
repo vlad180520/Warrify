@@ -6,18 +6,36 @@ import userRoutes from './routes/userRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import warrantyRoutes from './routes/warrantyRoutes.js';
 import dotenv from 'dotenv';
+import googleRoutes from './routes/googleRoutes.js'
+import session from "express-session";
 dotenv.config();
 
 const app = express();
 
-// Middleware
-app.use(cors());
+// Middleware CORS (permite frontend-ului să comunice cu backend-ul)
+app.use(cors({
+  origin: process.env.FRONTEND_URL, // ex: "http://localhost:3000"
+  credentials: true // permite transmiterea cookie-urilor
+}));
+
+// Middleware pentru sesiuni
+app.use(session({
+  secret: "your-secret-key", // Înlocuiește cu o cheie complexă
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    secure: false, // Setează "true" DOAR în producție (HTTPS)
+    httpOnly: true,
+    sameSite: "lax" // Permite cookie-uri cross-site
+  }
+}));
 app.use(bodyParser.json());
 
 // Routes
 app.use('/api', userRoutes);
 app.use('/api', warrantyRoutes);
 app.use('/api', authRoutes);
+app.use('/',googleRoutes);
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
