@@ -21,8 +21,10 @@ router.get('/warranties', async (req, res) => {
 
     // Build the filter object
     const filter = {};
-    if (fiscalCode) filter.fiscalCode = fiscalCode;
-    if (companyName) filter.companyName = { $regex: companyName, $options: 'i' }; // Case-insensitive search
+    if (fiscalCode)
+      filter.fiscalCode = fiscalCode;
+    if (companyName)
+      filter.companyName = { $regex: companyName, $options: 'i' }; // Case-insensitive search
 
     // Build the sort object
     const sort = {};

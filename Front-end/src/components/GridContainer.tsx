@@ -1,6 +1,7 @@
 import './GridContainer.css'
 import { Link } from 'react-router-dom';
 import { useState,useEffect,useRef } from 'react';
+import FileImport from './ImportFile'
 
 const specs =
 {
@@ -98,7 +99,11 @@ function GridContainer() {
                             </button>
                         </div>
                         <div className="modal-body">
-                        <button className='button buttoninvert grid-modal'>Import Manual</button>
+                        {/* <button className='button buttoninvert grid-modal'>
+                            Import Manual
+                            < FileImport />
+                        </button> */}
+                        < FileImport />
                         <button className='button buttoninvert grid-modal'>Check Email</button>
                         </div>
                     </div>
