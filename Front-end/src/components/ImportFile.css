@@ -1,0 +1,26 @@
+.import-manual-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .file-input {
+    display: none;
+  }
+  
+  .file-label {
+    cursor: pointer;
+  }
+  
+  .import-manual-button {
+    padding: 10px 20px;
+    background-color: #ff5400;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .import-manual-button:hover {
+    background-color: #ff5400;
+  }
