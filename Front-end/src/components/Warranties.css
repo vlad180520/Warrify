@@ -1,0 +1,55 @@
+.warr-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: -30px;
+}
+
+.warr-entry {
+    padding: 10px;
+    width: 80vw;
+    height: 3vh;
+    justify-content: stretch;
+    border-top: 2px solid rgba(50, 50, 50, 0.691);
+    border-left: none;
+    border-right: none;
+}
+
+.warr-container:last-child {
+    border-bottom: 2px solid rgba(50, 50, 50, 0.691);
+    width: 80vw;  
+}
+
+.warr-entry:hover {
+    background-color: rgba(144, 141, 141, 0.521);
+}
+
+.warr-element-prdName {
+    justify-content: center;
+}
+
+.warr-element-dataCump {
+    justify-content: center;
+}
+
+.warr-element-dataExp {
+    justify-content: center;
+}
+
+.warr-element-com {
+    justify-content: center;
+}
+.warr-line li {
+    width: 20vw;
+}
+
+.warr-header {
+    padding: 10px;
+    width: 80vw;
+    height: 3vh;
+    justify-content: stretch;
+    margin-bottom: 7px;
+}
+
+.warr-header li {
+    width: 20vw;
+}

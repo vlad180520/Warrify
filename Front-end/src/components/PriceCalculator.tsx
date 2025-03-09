@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import './PriceCalculator.css';
+import { useState } from 'react'
+import './PriceCalculator.css'
 
 const PRICE_PER_TB = 0.30;
 
@@ -69,4 +69,4 @@ const PriceCalculator = () => {
   );
 };
 
-export default PriceCalculator;
+export default PriceCalculator

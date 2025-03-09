@@ -2,6 +2,7 @@ import './GridContainer.css'
 import { Link } from 'react-router-dom';
 import { useState,useEffect,useRef } from 'react';
 import GmailButton from './GmailLogin';
+import FileImport from './ImportFile'
 
 const specs =
 {
@@ -99,8 +100,12 @@ function GridContainer() {
                             </button>
                         </div>
                         <div className="modal-body">
-                        <button className='button buttoninvert grid-modal'>Import Manual</button>
                         <GmailButton />
+                        {/* <button className='button buttoninvert grid-modal'>
+                            Import Manual
+                            < FileImport />
+                        </button> */}
+                        < FileImport />
                         </div>
                     </div>
                 </div>

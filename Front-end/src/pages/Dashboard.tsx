@@ -4,6 +4,7 @@ import LoginLightbox from "../components/LoginLightbox";
 import { useState } from "react";
 import './styles/Dashboard.css'
 import linieorizontala from './../assets/linie-orizontala.svg';
+import Warranties from "../components/Warranties";
 
 interface DashProps {
     isLoggedIn?: boolean
@@ -67,6 +68,7 @@ const Dashboard = ({ isLoggedIn }: DashProps) => {
                     )}
                 </div>
             </div>
+                <Warranties></Warranties>
         </>
     )
 }

@@ -2,10 +2,10 @@ import mongoose from 'mongoose';
 
 const warrantySchema = new mongoose.Schema({
   userId: { type: String, required: true },
-  scadentDate: { type: Date, required: true },
   issuingDate: { type: Date, required: true },
-  fiscalCode: { type: Number, required: true },
-  companyName: { type: String, required: true },
+  scadentDate: { type: Date, required: true },
+  fiscalCode: { type: Number, required: false },
+  companyName: { type: String, required: false },
   totalAmount: { type: Number, required: true },
   guaranteeId: { type: Number, required: true, unique: true },
   productName: { type: String, required: true }
