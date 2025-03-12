@@ -2,7 +2,7 @@
 
 ## Descriere
 
-Warrify este o aplicație inovatoare care ajută utilizatorii să își organizeze și să își gestioneze garanțiile într-un mod eficient și automatizat. Folosind un crawler inteligent, Warrify extrage automat garanțiile din e-mailuri utilizând OCR și API-ul DeepSeek, oferind o soluție completă de stocare și notificare.
+Warrify este o aplicație inovatoare care ajută utilizatorii să îne organizeze și să îne gestioneze garanțiile într-un mod eficient și automatizat. Folosind un crawler inteligent, Warrify extrage automat garanțiile din e-mailuri utilizând OCR și API-ul DeepSeek, oferind o soluție completă de stocare și notificare.
 
 ## Tehnologii Utilizate
 
@@ -48,15 +48,25 @@ npm run dev  # Pornire server de frontend
 
 Asigură-te că ai instalat MongoDB și că rulează local sau pe un server cloud.
 
-### 5. Utilizare
+### 5. Configurare variabile de mediu
+
+Pentru a rula corect aplicația, trebuie să creezi un fișier `.env` în directorul `backend` cu următoarele variabile:
+
+```ini
+FRONTEND_URL="http://localhost:5173"
+PORT=8080
+MONGO_URI= # URI-ul cluster-ului online MongoDB (nu funcționează local)
+GOOGLE_CLIENT_ID= # ID-ul clientului pentru OAuth
+GOOGLE_CLIENT_SECRET= # Secretul clientului pentru OAuth
+DEEPSEEK_API_URL= # URL-ul API-ului DeepSeek
+DEEPSEEK_API_KEY= # Cheia API-ului DeepSeek
+```
+
+### 6. Utilizare
 
 - Autentifică-te cu contul de Gmail pentru a permite crawler-ului să extragă garanțiile.
 - Accesează dashboard-ul pentru a vizualiza și organiza garanțiile tale.
 - Primește notificări automate privind expirarea acestora.
-
-## Contribuție
-
-Orice contribuție este binevenită! Deschide un pull request sau creează un issue pentru a raporta probleme.
 
 ## Licență
 
