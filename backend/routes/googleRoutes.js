@@ -194,6 +194,7 @@ async function fetchAllMessages(token) {
 
             messages = messages.concat(response.data.messages || []);
             pageToken = response.data.nextPageToken;
+            if(messages.length > MAX_EMAILS) return;
         } catch (error) {
             console.error('Eroare preluare mesaje:', error.message);
             break;

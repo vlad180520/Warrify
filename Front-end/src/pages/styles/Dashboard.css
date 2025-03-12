@@ -37,6 +37,7 @@
     position: relative;
     justify-content: center;
     gap: 6vw;
+    margin-top: 5vh;
     margin-bottom: 6vh;
   }
   .filter,.sort {

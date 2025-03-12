@@ -1,6 +1,8 @@
 .import-manual-container {
     text-align: center;
-    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
   }
   
   .file-input {

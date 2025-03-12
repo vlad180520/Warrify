@@ -19,13 +19,13 @@ const PriceCalculator = () => {
           <div className="price-box">
             <>
             <div className="incepand">Starting at</div>
-            <div className="price">70 RON</div>
+            <div className="price">50 RON</div>
             <small>*RON per month</small>
             </>
           </div>
           
           <div className="specs">
-            <p>Management offers 350 monthly guarantees</p>
+            <p>Management offers 300 monthly guarantees</p>
             <p>Number of additional guarantees charged with 0.30 RON* per warranty.</p>
             <p>Advanced warranty report</p>
           </div>

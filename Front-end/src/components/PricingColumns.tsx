@@ -4,8 +4,8 @@ import "./PricingColumns.css";
 const plans = [
   {
     title: "Enterprise",
-    price: "25 RON",
-    garantii: "Management offers 120 monthly guarantees",
+    price: "200 RON",
+    garantii: "Management offers 120 yearly guarantees",
     av1: "Grouping guarantees into categories",
     av2: "Guarantees are collected from mail periodically",
     f1: "For individual users",
@@ -14,8 +14,8 @@ const plans = [
   },
   {
     title: "Pro",
-    price: "50 RON",
-    garantii: "Management offers 250 monthly guarantees",
+    price: "300 RON",
+    garantii: "Management offers 250 yearly guarantees",
     av1: "Extra push notifications will be sent when the guarantees expire.",
     av2: "Basic report on warranties.",
     f1: "Intended for small-medium enterprises",
@@ -23,8 +23,8 @@ const plans = [
   },
   {
     title: "Premium",
-    price: "100 RON",
-    garantii: "Management offers 500+ monthly guarantees",
+    price: "500 RON",
+    garantii: "Management offers 500+ yearly guarantees",
     av1: "Advanced report on warranties",
     av2: "24/7 support",
     f1: "Intended for bigger enterprises",
@@ -43,7 +43,7 @@ const PricingColumns = () => {
             {plan.price!='0 RON'&&
             <>
             <div className="price">{plan.price}</div>
-            <small>*RON per month</small>
+            <small>*RON per year</small>
             </>
             }
             {plan.price=='0 RON'&&

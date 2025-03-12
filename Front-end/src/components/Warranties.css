@@ -1,11 +1,12 @@
 .warr-container {
     display: flex;
     flex-direction: column;
-    margin-top: -30px;
+    margin-bottom: 5vh;
 }
 
 .warr-entry {
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 80vw;
     height: 3vh;
     justify-content: stretch;
@@ -13,7 +14,9 @@
     border-left: none;
     border-right: none;
 }
-
+.warr-line:hover {
+    cursor: pointer ;
+}
 .warr-container:last-child {
     border-bottom: 2px solid rgba(50, 50, 50, 0.691);
     width: 80vw;  
@@ -26,7 +29,24 @@
 .warr-element-prdName {
     justify-content: center;
 }
-
+.modal-war {
+    position: absolute;
+    bottom: 20%;
+    right: 10%;
+    border-radius: 5px;
+    width: 5vw;
+}
+.modal-war-2 {
+    position: absolute;
+    width: 5vw;
+    border-radius: 5px;
+    right: 10%;
+    bottom: 45%;
+}
+.modal-details {
+    position: relative;
+    top: 25%;
+}
 .warr-element-dataCump {
     justify-content: center;
 }
@@ -43,7 +63,8 @@
 }
 
 .warr-header {
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 80vw;
     height: 3vh;
     justify-content: stretch;
