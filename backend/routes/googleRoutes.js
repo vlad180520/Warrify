@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import { google } from 'googleapis';
 import { createHash } from 'crypto';
 import session from 'express-session';
-import pdf from 'pdf-parse';
+const pdf = await import('pdf-parse');
 
 const router = express.Router();
 
