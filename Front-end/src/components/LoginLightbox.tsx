@@ -4,6 +4,7 @@ import './LoginLightbox.css'; // Importăm fișierul CSS separat
 
 const LoginLightbox = () => {
   const [isVisible, setIsVisible] = useState(true);
+  setIsVisible(true);
 
   const handleLoginRedirect = () => {
     window.location.href = '/login';

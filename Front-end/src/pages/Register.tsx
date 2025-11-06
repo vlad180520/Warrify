@@ -1,9 +1,7 @@
 // RegisterForm.tsx
-import Header from '../components/Header';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './styles/Register.css';
-import { Navigate } from 'react-router-dom';
-import { Link,useNavigate } from 'react-router-dom';
 
 const Register = () => {
 

@@ -13,11 +13,6 @@ export default function GmailButton() {
     }
   }, []);
 
-  const handleLogin = () => {
-    // Redirecționează către backend pentru OAuth
-    window.location.href = 'http://localhost:8080/auth/google';
-  };
-
   return (
     <a href='http://localhost:8080/auth/google' className="google-btn">
       <div className="google-icon-wrapper">

@@ -1,4 +1,3 @@
-  import Header from "../components/Header";
   import GridContainer from "../components/GridContainer";
   import LoginLightbox from "../components/LoginLightbox";
   import { useState, useMemo } from "react";

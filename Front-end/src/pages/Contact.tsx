@@ -1,4 +1,3 @@
-import Header from "../components/Header"
 import './styles/Contact.css'
 import left from "../assets/people.jpg"
 function Contact () {

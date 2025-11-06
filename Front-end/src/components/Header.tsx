@@ -1,10 +1,7 @@
 
-import { Link, Navigate, useLocation } from 'react-router-dom'
-import { useState, useEffect, useRef } from 'react'
-import React from 'react';
+import { Link, useLocation } from 'react-router-dom'
 import './Header.css'
 import Cookies from 'js-cookie'
-import Logo from '../assets/Logo'
 import pozalogo from '../assets/logo.png'
 import { useNavigate } from 'react-router-dom';
 

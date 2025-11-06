@@ -1,4 +1,3 @@
-import Header from "../components/Header"
 import './styles/Pricing.css'
 import PricingColumns from "../components/PricingColumns"
 import Footer from "../components/Footer"
