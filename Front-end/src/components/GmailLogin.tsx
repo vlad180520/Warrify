@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import './GmailLogin.css'
+import { BASE_URL } from '../config';
 
 export default function GmailButton() {
   // Verifică dacă există token în URL după redirecționare
@@ -14,7 +15,7 @@ export default function GmailButton() {
   }, []);
 
   return (
-    <a href='http://localhost:8080/auth/google' className="google-btn">
+    <a href={`${BASE_URL}/auth/google`} className="google-btn">
       <div className="google-icon-wrapper">
         <svg className="google-icon" viewBox="0 0 48 48">
           <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />

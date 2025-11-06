@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './styles/Login.css';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
+import { BASE_URL } from '../config';
 
 const LoginForm = () => {
   const navigate = useNavigate()
@@ -30,7 +31,7 @@ const LoginForm = () => {
     // Trimite datele la server
     // console.log('Login data:', { email, password, rememberMe });
     try {
-      const response = await fetch("http://localhost:8080/api/login", {
+      const response = await fetch(`${BASE_URL}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

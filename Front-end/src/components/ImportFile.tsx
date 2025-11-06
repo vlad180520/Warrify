@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import './ImportFile.css';
+import { BASE_URL } from '../config';
 
 const ImportManualButton: React.FC = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -13,7 +14,7 @@ const ImportManualButton: React.FC = () => {
       formData.append('pdf', selectedFile);
 
       try {
-        const response = await fetch("http://localhost:8080/api/warranties2", {
+        const response = await fetch(`${BASE_URL}/api/warranties2`, {
           method: "POST",
           body: formData,
         });

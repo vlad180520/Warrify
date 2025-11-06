@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/Register.css';
+import { BASE_URL } from '../config';
 
 const Register = () => {
 
@@ -56,7 +57,7 @@ const Register = () => {
     // Trimite datele la server
     // console.log('Register data:', { name, email, password, terms });
     try {
-      const response = await fetch("http://localhost:8080/api/register", {
+      const response = await fetch(`${BASE_URL}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, password, terms }),
