@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 import { google } from 'googleapis';
 import { createHash } from 'crypto';
 import session from 'express-session';
-const pdf = await import('pdf-parse');
 
 const router = express.Router();
 
@@ -45,7 +44,8 @@ async function extractPDFText(buffer) {
         if (header !== '25504446') { // %PDF în hex
             throw new Error('Fișierul nu este un PDF valid');
         }
-
+        
+        const pdf = await import('pdf-parse');
         const data = await pdf(buffer);
         let text = data.text;
 
